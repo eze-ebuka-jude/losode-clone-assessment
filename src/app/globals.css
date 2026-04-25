@@ -5,3 +5,7 @@
   --font-montserrat: "Montserrat", sans-serif;
   --font-poppins: "Poppins", sans-serif;
 }
+
+.tw-search .ant-input-search-button {
+  @apply bg-black;
+}
