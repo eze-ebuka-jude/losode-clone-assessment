@@ -17,14 +17,14 @@ const Cart = () => {
     }
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-12">
-            <h1 className="font-poppins font-bold text-3xl mb-8">Shopping Cart</h1>
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 py-8 sm:py-12 mt-4 sm:mt-6">
+            <h1 className="font-poppins font-bold text-2xl sm:text-3xl mb-6 sm:mb-8">Shopping Cart</h1>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
                 {/* Cart Items */}
                 <div className="lg:col-span-2">
-                    <div className="bg-white rounded-lg p-6">
-                        <div className="space-y-6">
+                    <div className="bg-white rounded-lg p-3 sm:p-6 shadow-sm">
+                        <div className="space-y-4 sm:space-y-6">
                             {items.map((item: CartItemType) => (
                                 <CartItem key={item.productId} item={item} />
                             ))}

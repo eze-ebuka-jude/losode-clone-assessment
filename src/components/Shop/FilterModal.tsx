@@ -1,13 +1,13 @@
 "use client";
 
 import { Modal, Select, Slider, Button } from "antd";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 
 export interface CategoryOption {
     label: string;
     value: string;
-    name: string
-    slug: string
+    name?: string
+    slug?: string
 }
 
 type Props = {
