@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Losode Fashion App",
   description: "A clothing brand app that displays different clothings and allow search your favorite",
   icons: {
-    icon: "/icon.png",
+    icon: "/app-logo.png",
   }
 };
 
