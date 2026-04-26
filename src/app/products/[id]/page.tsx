@@ -13,7 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { StarOutlined, CheckCircleOutlined, CloseCircleOutlined } from "@ant-design/icons";
 import type { ProductDataType } from "../../../types/productDataType";
-import { useNotification } from "../../../hooks/useNotification";
+import { useNotification } from "../../../hooks/Notification";
 
 export default function ProductDetail() {
     const params = useParams();
