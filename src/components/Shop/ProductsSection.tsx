@@ -53,18 +53,6 @@ const ProductsSection = () => {
         queryFn: getCategories,
     });
 
-    //   const { data, isLoading } = useQuery({
-    //     queryKey: ["products", page, categoryParam],
-    //     queryFn: () =>
-    //       getProducts(
-    //         page,
-    //         PAGE_SIZE,
-    //         categoryParam === "all" ? undefined : categoryParam
-    //       ),
-    //   });
-
-    // const filteredProducts = dataProduct?.products.filter((p: filterP) => p.price <= priceParam) || [];
-
     const handleApply = ({
         category,
         price,
@@ -92,7 +80,7 @@ const ProductsSection = () => {
                 <div className="flex items-center justify-between max-w-7xl px-4 py-6 mx-auto">
                     <div className="flex  items-start gap-8">
                         <div className="flex items-center gap-7">
-                            <span className="flex gap-2 font-poppins font-medium text-md" onClick={() => setIsOpen(true)}>
+                            <span className="flex gap-2 font-poppins font-medium text-md cursor-pointer" onClick={() => setIsOpen(true)}>
                                 <Image src={FilterIcon} alt="filter-icon" />
                                 Filter
                             </span>
@@ -145,9 +133,7 @@ const ProductsSection = () => {
                     ))}
                 </div>
 
-                {/* Pagination links */}
                 <div className="flex items-center justify-center mx-auto gap-4 mt-12">
-                    {/* Pagination */}
                     <div className="flex justify-center gap-2 mt-6">
                         <button
                             disabled={page === 1}
@@ -161,7 +147,7 @@ const ProductsSection = () => {
                             <button
                                 key={i}
                                 onClick={() => setPage(i + 1)}
-                                className={`px-3 py-1 border cursor-pointer ${page === i + 1 ? "bg-black text-white cursor-pointer" : ""
+                                className={`px-3 py-1 border cursor-pointer ${page === i + 1 ? "bg-black text-white! cursor-pointer" : ""
                                     }`}
                             >
                                 {i + 1}

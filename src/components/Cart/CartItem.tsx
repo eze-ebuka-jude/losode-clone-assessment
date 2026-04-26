@@ -1,7 +1,7 @@
 "use client";
 
 import { CartItem as CartItemType } from "../../types/cartTypes";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { removeItem, updateQuantity } from "../../lib/store/slices/cartSlice";
 import { DeleteOutlined, MinusOutlined, PlusOutlined } from "@ant-design/icons";
 import Image from "next/image";
@@ -48,7 +48,7 @@ const CartItem = ({ item }: CartItemProps) => {
                     {item.product.description}
                 </p>
                 <p className="font-poppins font-semibold text-[#B88E5F]">
-                    Rs. {item.product.price.toFixed(2)}
+                    $ {item.product.price.toFixed(2)}
                 </p>
             </div>
 
@@ -58,7 +58,7 @@ const CartItem = ({ item }: CartItemProps) => {
                     <button
                         onClick={() => handleUpdateQuantity(item.quantity - 1)}
                         disabled={item.quantity <= 1}
-                        className="p-2 text-gray-600 disabled:text-gray-300"
+                        className="p-2 text-gray-600 cursor-pointer disabled:text-gray-300"
                         aria-label="Decrease quantity"
                     >
                         <MinusOutlined />
@@ -74,7 +74,7 @@ const CartItem = ({ item }: CartItemProps) => {
                     <button
                         onClick={() => handleUpdateQuantity(item.quantity + 1)}
                         disabled={item.quantity >= item.product.stock}
-                        className="p-2 text-gray-600 disabled:text-gray-300"
+                        className="p-2 text-gray-600 cursor-pointer disabled:text-gray-300"
                         aria-label="Increase quantity"
                     >
                         <PlusOutlined />
@@ -84,11 +84,11 @@ const CartItem = ({ item }: CartItemProps) => {
                 {/* Item Total & Delete */}
                 <div className="text-right">
                     <p className="font-poppins font-semibold text-gray-800 mb-2">
-                        Rs. {itemTotal.toFixed(2)}
+                        $ {itemTotal.toFixed(2)}
                     </p>
                     <button
                         onClick={handleRemove}
-                        className="text-red-500 hover:text-red-700 transition"
+                        className="text-red-500 cursor-pointer hover:text-red-700 transition"
                         aria-label="Remove item"
                     >
                         <DeleteOutlined className="text-lg" />

@@ -21,18 +21,18 @@ const CartSummary = () => {
             <div className="space-y-4 mb-6 pb-6 border-b border-gray-300">
                 <div className="flex justify-between font-poppins text-gray-700">
                     <span>Subtotal:</span>
-                    <span>Rs. {subtotal.toFixed(2)}</span>
+                    <span>$ {subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between font-poppins text-gray-700">
                     <span>Tax (10%):</span>
-                    <span>Rs. {tax.toFixed(2)}</span>
+                    <span>$ {tax.toFixed(2)}</span>
                 </div>
             </div>
 
             <div className="flex justify-between mb-8">
                 <span className="font-poppins font-semibold text-lg">Total:</span>
                 <span className="font-poppins font-bold text-xl text-[#B88E5F]">
-                    Rs. {total.toFixed(2)}
+                    $ {total.toFixed(2)}
                 </span>
             </div>
 
