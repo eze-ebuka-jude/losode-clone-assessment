@@ -59,8 +59,18 @@ const Hero = () => {
                         </div>
                     </>
                 )}
-            </div>
 
+                {(pathname === "/confirmation") && (
+                    <>
+                        <h4 className="font-poppins font-medium text-3xl text-[#000000]">Order Confirmation</h4>
+                        <div className="flex gap-1 font-poppins">
+                            <span className="font-semibold text-sm">Home</span>
+                            <span><RightOutlined className="mt-0.5" /></span>
+                            <span className="text-sm">Order Confirmation</span>
+                        </div>
+                    </>
+                )}
+            </div>
 
         </div>
     )

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CartState, CartItem } from "../../types/cartTypes";
-import { ProductDataType } from "../../types/productDataType";
+import { CartState, CartItem } from "../../../types/cartTypes";
+import { ProductDataType } from "../../../types/productDataType";
 
 const initialState: CartState = {
   items: [],
