@@ -16,7 +16,7 @@ const Hero = () => {
             <Image src={ShopHeroImg} alt="shop-hero-img" loading="eager" className="w-full" />
             <div className="absolute top-35 flex flex-col justify-center items-center gap-2 mx-auto w-full">
                 <Image src={appLogo} alt="app-logo" />
-                {(pathname === "/products" || "/") && (
+                {(pathname === "/products" || pathname === "/") && (
                     <>
                         <h4 className="font-poppins font-medium text-3xl text-[#000000]">Shop</h4>
                         <div className="flex gap-1 font-poppins">

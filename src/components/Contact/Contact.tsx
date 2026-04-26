@@ -37,16 +37,12 @@ const Contact = () => {
     const handleSubmit = async (values: ContactFormData) => {
         setIsLoading(true);
         try {
-            // Simulate API call - replace with your actual endpoint
             await new Promise((resolve) => setTimeout(resolve, 1000));
 
-            // Here you would typically send data to your backend
             console.log("Form submitted with data:", values);
 
-            // Show success modal
             setIsModalVisible(true);
 
-            // Reset form
             form.resetFields();
             setAllFieldsFilled(false);
         } catch (error) {
@@ -63,7 +59,6 @@ const Contact = () => {
     return (
         <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-                {/* Heading */}
                 <div className="text-center mb-12">
                     <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
                         Get in touch with us
@@ -74,11 +69,8 @@ const Contact = () => {
                     </p>
                 </div>
 
-                {/* Two Column Layout */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    {/* Left Column - Contact Information */}
                     <div className="space-y-8">
-                        {/* Address */}
                         <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
                             <div className="flex items-start gap-4">
                                 <div className="text-2xl text-blue-600 mt-1">
@@ -89,15 +81,14 @@ const Contact = () => {
                                         Address
                                     </h3>
                                     <p className="text-gray-600">
-                                        123 Business Street
+                                        400 University Drive Suite 200 Coral
                                         <br />
-                                        Lagos, Nigeria 100213
+                                        Gables, FL 33134 USA
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Phone Numbers */}
                         <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
                             <div className="flex items-start gap-4">
                                 <div className="text-2xl text-green-600 mt-1">
@@ -116,7 +107,6 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        {/* Working Hours */}
                         <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
                             <div className="flex items-start gap-4">
                                 <div className="text-2xl text-purple-600 mt-1">
@@ -138,7 +128,6 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    {/* Right Column - Contact Form */}
                     <div className="bg-white rounded-lg shadow-md p-8">
                         <h2 className="text-2xl font-bold text-gray-900 mb-6">
                             Send us a Message
@@ -153,7 +142,6 @@ const Contact = () => {
                                 className="space-y-4"
                                 disabled={isLoading}
                             >
-                                {/* Name Field */}
                                 <Form.Item
                                     name="name"
                                     label="Your Name"
@@ -169,7 +157,6 @@ const Contact = () => {
                                     />
                                 </Form.Item>
 
-                                {/* Email Field */}
                                 <Form.Item
                                     name="email"
                                     label="Email Address"
@@ -188,7 +175,6 @@ const Contact = () => {
                                     />
                                 </Form.Item>
 
-                                {/* Subject Field */}
                                 <Form.Item
                                     name="subject"
                                     label="Subject"
@@ -204,7 +190,6 @@ const Contact = () => {
                                     />
                                 </Form.Item>
 
-                                {/* Message Field */}
                                 <Form.Item
                                     name="message"
                                     label="Message"
@@ -220,7 +205,6 @@ const Contact = () => {
                                     />
                                 </Form.Item>
 
-                                {/* Submit Button */}
                                 <Form.Item className="mb-0 pt-4">
                                     <Button
                                         type="primary"
@@ -239,7 +223,6 @@ const Contact = () => {
                 </div>
             </div>
 
-            {/* Success Modal */}
             <Modal
                 title={null}
                 footer={null}
