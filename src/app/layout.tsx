@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import "./globals.css";
 import Footer from "../components/Footer";
 import Providers from "./providers";
+import 'antd/dist/reset.css';
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,11 +29,11 @@ export default function RootLayout({
       lang="en"
     >
       <body className={`${poppins.className}`}>
-        <Navbar />
         <Providers>
+          <Navbar />
           {children}
+          <Footer />
         </Providers>
-        <Footer />
       </body>
     </html>
   );

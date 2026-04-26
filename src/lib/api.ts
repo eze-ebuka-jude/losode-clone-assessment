@@ -60,3 +60,24 @@ export const getCategories = async (): Promise<CategoryOption[]> => {
 
   return data
 };
+
+export const getSimilarProducts = async (
+  category: string,
+  currentProductId: number,
+  limit: number = 4
+): Promise<ProductsResponse> => {
+  const { data } = await axios.get(
+    `${API_URL}/products/category/${category}`,
+    { params: { limit: limit * 2, skip: 0 } }
+  );
+  
+  // Filter out the current product from similar products
+  const filtered = data.products.filter(
+    (product: ProductDataType) => product.id !== currentProductId
+  );
+  
+  return {
+    ...data,
+    products: filtered.slice(0, limit),
+  };
+};
