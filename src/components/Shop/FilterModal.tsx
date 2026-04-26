@@ -1,11 +1,13 @@
 "use client";
 
 import { Modal, Select, Slider, Button } from "antd";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export interface CategoryOption {
     label: string;
     value: string;
+    name: string
+    slug: string
 }
 
 type Props = {
@@ -26,18 +28,14 @@ export default function FilterModal({
     currentPrice,
     onApply,
 }: Props) {
-    // 🧠 local state (inside modal only)
     const [category, setCategory] = useState(currentCategory);
     const [price, setPrice] = useState(currentPrice);
 
-    // sync when modal opens
-    useEffect(() => {
-        setTimeout(() => {
-            if (open) {
-                setCategory(currentCategory);
-                setPrice(currentPrice);
-            }
-        }, 1000)
+    useCallback(() => {
+        if (open) {
+            setCategory(currentCategory);
+            setPrice(currentPrice);
+        }
     }, [open, currentCategory, currentPrice]);
 
     return (
@@ -48,7 +46,6 @@ export default function FilterModal({
             title="Filter Products"
         >
             <div className="space-y-6">
-                {/* Category */}
                 <div>
                     <p className="mb-2">Category</p>
                     <Select
@@ -58,15 +55,13 @@ export default function FilterModal({
                         options={[
                             { label: "All", value: "all" },
                             ...categories.map((c) => ({
-                                label: c,
-                                value: c,
+                                label: c.name,
+                                value: c.slug,
                             })),
                         ]}
                     />
                 </div>
 
-
-                {/* Price */}
                 <div>
                     <p className="mb-2">Max Price: ${price}</p>
                     <Slider
@@ -77,7 +72,6 @@ export default function FilterModal({
                     />
                 </div>
 
-                {/* Actions */}
                 <div className="flex justify-between mt-6">
                     <Button onClick={onClose}>Cancel</Button>
 
