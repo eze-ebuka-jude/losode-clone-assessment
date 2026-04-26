@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CheckoutFormData, Order } from "../../types/paystack";
+import { CheckoutFormData, Order } from "../../../types/paystack";
 
 export interface CheckoutState {
   form: CheckoutFormData | null;
