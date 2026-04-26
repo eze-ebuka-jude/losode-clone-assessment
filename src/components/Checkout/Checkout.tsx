@@ -175,10 +175,10 @@ const Checkout: React.FC = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 py-12">
-            <div className="max-w-7xl mx-auto px-4">
+        <div className="min-h-screen bg-gray-50 py-8 sm:py-12 mt-4 sm:mt-6">
+            <div className="max-w-7xl mx-auto px-3 sm:px-4">
                 {step === "form" && (
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                         <PaymentForm
                             onSubmit={handleFormSubmit}
                             isLoading={isProcessing}

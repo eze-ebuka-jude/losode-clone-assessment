@@ -28,8 +28,8 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
     }, [error]);
 
     return (
-        <div className="w-full max-w-md mx-auto">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">
+        <div className="w-full">
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">
                 Shipping Information
             </h2>
 
@@ -38,10 +38,10 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
                     form={form}
                     layout="vertical"
                     onFinish={handleSubmit}
-                    className="space-y-4"
+                    className="space-y-3 sm:space-y-4"
                     disabled={isLoading}
                 >
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         <Form.Item
                             name="firstName"
                             label="First Name"
@@ -50,7 +50,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
                                 { min: 2, message: "Must be at least 2 characters" },
                             ]}
                         >
-                            <Input placeholder="John" />
+                            <Input placeholder="John" size="large" />
                         </Form.Item>
 
                         <Form.Item
@@ -61,7 +61,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
                                 { min: 2, message: "Must be at least 2 characters" },
                             ]}
                         >
-                            <Input placeholder="Doe" />
+                            <Input placeholder="Doe" size="large" />
                         </Form.Item>
                     </div>
 
@@ -73,7 +73,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
                             { type: "email", message: "Invalid email format" },
                         ]}
                     >
-                        <Input placeholder="john@example.com" />
+                        <Input placeholder="john@example.com" size="large" />
                     </Form.Item>
 
                     <Form.Item
@@ -87,7 +87,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
                             },
                         ]}
                     >
-                        <Input placeholder="+234 XXX XXX XXXX" />
+                        <Input placeholder="+234 XXX XXX XXXX" size="large" />
                     </Form.Item>
 
                     <Form.Item
@@ -98,16 +98,16 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
                             { min: 5, message: "Address must be at least 5 characters" },
                         ]}
                     >
-                        <Input placeholder="123 Main Street" />
+                        <Input placeholder="123 Main Street" size="large" />
                     </Form.Item>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         <Form.Item
                             name="city"
                             label="City"
                             rules={[{ required: true, message: "City is required" }]}
                         >
-                            <Input placeholder="Lagos" />
+                            <Input placeholder="Lagos" size="large" />
                         </Form.Item>
 
                         <Form.Item
@@ -115,17 +115,17 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
                             label="State/Province"
                             rules={[{ required: true, message: "State is required" }]}
                         >
-                            <Input placeholder="Lagos" />
+                            <Input placeholder="Lagos" size="large" />
                         </Form.Item>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         <Form.Item
                             name="zipCode"
                             label="Postal Code"
                             rules={[{ required: true, message: "Postal code is required" }]}
                         >
-                            <Input placeholder="100001" />
+                            <Input placeholder="100001" size="large" />
                         </Form.Item>
 
                         <Form.Item
@@ -133,7 +133,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
                             label="Country"
                             rules={[{ required: true, message: "Country is required" }]}
                         >
-                            <Input placeholder="Nigeria" />
+                            <Input placeholder="Nigeria" size="large" />
                         </Form.Item>
                     </div>
 
@@ -141,9 +141,10 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
                         <Button
                             type="primary"
                             htmlType="submit"
-                            className="w-full h-10 text-base font-semibold"
+                            className="w-full h-10 sm:h-12 text-sm sm:text-base font-semibold"
                             loading={isLoading}
                             disabled={isLoading}
+                            size="large"
                         >
                             {isLoading ? "Processing..." : "Continue to Payment"}
                         </Button>
@@ -152,7 +153,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
             </Spin>
 
             {error && (
-                <div className="mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+                <div className="mt-3 sm:mt-4 p-3 sm:p-4 bg-red-100 border border-red-400 text-red-700 rounded text-sm sm:text-base">
                     {error}
                 </div>
             )}
